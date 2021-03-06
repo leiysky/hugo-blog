@@ -1,63 +1,42 @@
-baseURL = "https://blog.leiysky.xyz"
-languageCode = "en-us"
-title = "leiysky's blog"
-theme = "leaveit"
+baseURL = "https://leiysky.github.io"
+title = "leiysky's Blog"
+theme = "hugo-geekblog"
 
-paginate = 12
-enableEmoji = true
-enableRobotsTXT = true
-googleAnalytics = ""
+# Geekblog required configuration
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+disablePathToLower = true
 
-preserveTaxonomyNames = true
+# Needed for mermaid shortcodes
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 9
 
-[blackfriday]
-  hrefTargetBlank = true
-  nofollowLinks = true
-  noreferrerLinks = true
+[taxonomies]
+  author = "authors"
+  tag = "tags"
 
-[Permalinks]
-  posts = "/:year/:filename/"
+[mediaTypes]
+  [mediaTypes."application/atom+xml"]
+    suffixes = ["xml"]
 
-[menu]
-  [[menu.main]]
-    name = "Blog"
-    url = "/posts/"
-    weight = 1
+[outputFormats]
+  [outputFormats.Atom]
+    name = "Atom"
+    mediaType = "application/atom+xml"
+    baseName = "atom"
+    isPlainText = false
+    rel = "alternate"
+    isHTML = false
+    noUgly = true
+    permalinkable = false
 
-  [[menu.main]]
-    name = "Categories"
-    url = "/categories/"
-    weight = 2
-
-  [[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 3
-
-  [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 4
-
-[params]
-    since = 2017
-    author = "leiysky"                           # Author's name
-    avatar = "/images/me/avatar.jpg"           # Author's avatar
-    subtitle = "Coding & Living"         # Subtitle
-    cdn_url = ""           # Base CDN URL
-    home_mode = "" # post or other
-
-    google_verification = ""
-   
-    description = "" # site description
-    keywords = "Blog" # site keywords
-
-    beian = ""
-    baiduAnalytics = ""
-
-    license= '本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可'
-
-[params.social]
-    GitHub = "leiysky"
-    Email   = "leiysky@outlook.com"
-
+[outputFormats.outputs]
+  home = ["HTML", "ATOM"]
+  page = ["HTML"]
+  section = ["HTML"]
+  taxonomy = ["HTML"]
+  term = ["HTML", "ATOM"]
