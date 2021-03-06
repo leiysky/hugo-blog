@@ -16,7 +16,7 @@ jobs:
         repo: leiysky/leiysky.github.io
         target_branch: master
         skip_cleanup: true
-        github_token: $GITHUB_TOKEN
+        github_token: $SECRET_TOKEN
         keep_history: true
         on:
           branch: master
